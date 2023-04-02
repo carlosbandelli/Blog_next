@@ -1,0 +1,163 @@
+{
+  "data": {
+    "setting": {
+      "data": {
+        "id": "1",
+        "attributes": {
+          "blogName": "Carlos Bandelli",
+          "blogDescription": "Meu blog",
+          "logo": {
+            "data": {
+              "attributes": {
+                "alternativeText": null,
+                "url": "https://res.cloudinary.com/dskhkq8f1/image/upload/v1680192449/Untitled_logo_1_free_file_c85ed4a293.jpg"
+              }
+            }
+          },
+          "menuLink": [],
+          "footer_text": "Meu primeiro blog"
+        }
+      }
+    },
+    "posts": {
+      "data": [
+        {
+          "id": "1",
+          "attributes": {
+            "title": "Como instalar o TypeScript",
+            "slug": "como-instalar-o-type-script",
+            "content": "O TypeScript é um superset para o Javascript, com isso ele traz uma série de recursos interessantes como tipagem estática, interfaces, generics, entre outras. Além de trazer mais praticidade no uso de orientação a objetos, com esses recursos, o seu editor (como o VS Code) fica mais eficiente, com um autocomplete mais inteligente, exibe erros em tempo de compilação, como consequência, no final das contas você terá como resultado um código mais claro e confiável.\n\nAqui na TreinaWeb temos um artigo completo sobre o TypeScript, aconselho a leitura caso você não tenha conhecimento sobre essa incrível ferramenta.\n\n![capa_ampliada_9786586057997_cc62458fd7.jpg](https://res.cloudinary.com/dskhkq8f1/image/upload/v1680192761/capa_ampliada_9786586057997_cc62458fd7_21c5b975dc.jpg)\n\n**Como instalar o TypeScript**\nPrimeiramente precisamos ter instalado o Node em nosso ambiente. Para fazer a instalação você pode seguir nosso artigo de instalação do Node.js no Windows, Mac e Linux.\n\nApós a instalação vamos criar um projeto chamado ts, e então, aplicar o comando no terminal dentro do diretório do projeto:\n\n```\nnpm init\n\n```\n\nEste comando irá criar o arquivo package.json, que será útil para as configurações do nosso projeto e verificar as dependências que estamos utilizando. Ao digitar o comando irá surgir algumas perguntas, podemos pular (enter) todas.\n\nÓtimo! Agora vamos para a instalação efetivamente do TypeScript, para isto basta aplicar o comando:\n\n```\nnpm install typescript\n\n```\nO arquivo package.json ficará da seguinte forma:\n\n```\n{\n  \"name\": \"ts\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\\\"Error: no test specified\\\\\" && exit 1\"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"typescript\": \"^4.4.2\"\n  }\n}\n\n\n```\nPerceba que o arquivo package.json já exibe o pacote do TypeScript como dependência.\n\nAgora podemos iniciar as configurações do TypeScript, para isso vamos aplicar o comando:\n```\nnpx tsc --init\n\n```\n\nDesta forma irá gerar o arquivo tsconfig.json, que será responsável pelas configurações do TypeScript, algo similar ao código abaixo:\n\n```\n{\n  \"compilerOptions\": {\n    /* Visit  to read more about this file */\n\n    /* Projects */\n    // \"incremental\": true,                              /* Enable incremental compilation */\n    // \"composite\": true,                                /* Enable constraints that allow a TypeScript project to be used with project references. */\n    // \"tsBuildInfoFile\": \"./\",                          /* Specify the folder for .tsbuildinfo incremental compilation files. */\n    // \"disableSourceOfProjectReferenceRedirect\": true,  /* Disable preferring source files instead of declaration files when referencing composite projects */\n    // \"disableSolutionSearching\": true,                 /* Opt a project out of multi-project reference checking when editing. */\n    // \"disableReferencedProjectLoad\": true,             /* Reduce the number of projects loaded automatically by TypeScript. */\n\n    /* Language and Environment */\n    \"target\": \"es5\",                                     /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */\n    // \"lib\": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */\n    // \"jsx\": \"preserve\",                                /* Specify what JSX code is generated. */\n    // \"experimentalDecorators\": true,                   /* Enable experimental support for TC39 stage 2 draft decorators. */\n    // \"emitDecoratorMetadata\": true,                    /* Emit design-type metadata for decorated declarations in source files. */\n    // \"jsxFactory\": \"\",                                 /* Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h' */\n    // \"jsxFragmentFactory\": \"\",                         /* Specify the JSX Fragment reference used for fragments when targeting React JSX emit e.g. 'React.Fragment' or 'Fragment'. */\n    // \"jsxImportSource\": \"\",                            /* Specify module specifier used to import the JSX factory functions when using `jsx: react-jsx*`.` */\n    // \"reactNamespace\": \"\",                             /* Specify the object invoked for `createElement`. This only applies when targeting `react` JSX emit. */\n    // \"noLib\": true,                                    /* Disable including any library files, including the default lib.d.ts. */\n    // \"useDefineForClassFields\": true,                  /* Emit ECMAScript-standard-compliant class fields. */\n\n    /* Modules */\n    \"module\": \"ESNext\",                                /* Specify what module code is generated. */\n    // \"rootDir\": \"./\",                                  /* Specify the root folder within your source files. */\n    // \"moduleResolution\": \"node\",                       /* Specify how TypeScript looks up a file from a given module specifier. */\n    // \"baseUrl\": \"./\",                                  /* Specify the base directory to resolve non-relative module names. */\n    // \"paths\": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */\n    // \"rootDirs\": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */\n    // \"typeRoots\": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */\n    // \"types\": [],                                      /* Specify type package names to be included without being referenced in a source file. */\n    // \"allowUmdGlobalAccess\": true,                     /* Allow accessing UMD globals from modules. */\n    // \"resolveJsonModule\": true,                        /* Enable importing .json files */\n    // \"noResolve\": true,                                /* Disallow `import`s, `require`s or ``s from expanding the number of files TypeScript should add to a project. */\n\n    /* JavaScript Support */\n    // \"allowJs\": true,                                  /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */\n    // \"checkJs\": true,                                  /* Enable error reporting in type-checked JavaScript files. */\n    // \"maxNodeModuleJsDepth\": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from `node_modules`. Only applicable with `allowJs`. */\n\n    /* Emit */\n    // \"declaration\": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */\n    // \"declarationMap\": true,                           /* Create sourcemaps for d.ts files. */\n    // \"emitDeclarationOnly\": true,                      /* Only output d.ts files and not JavaScript files. */\n    // \"sourceMap\": true,                                /* Create source map files for emitted JavaScript files. */\n    // \"outFile\": \"./\",                                  /* Specify a file that bundles all outputs into one JavaScript file. If `declaration` is true, also designates a file that bundles all .d.ts output. */\n    \"outDir\": \"./dist\",                                   /* Specify an output folder for all emitted files. */\n    // \"removeComments\": true,                           /* Disable emitting comments. */\n    // \"noEmit\": true,                                   /* Disable emitting files from a compilation. */\n    // \"importHelpers\": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */\n    // \"importsNotUsedAsValues\": \"remove\",               /* Specify emit/checking behavior for imports that are only used for types */\n    // \"downlevelIteration\": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */\n    // \"sourceRoot\": \"\",                                 /* Specify the root path for debuggers to find the reference source code. */\n    // \"mapRoot\": \"\",                                    /* Specify the location where debugger should locate map files instead of generated locations. */\n    // \"inlineSourceMap\": true,                          /* Include sourcemap files inside the emitted JavaScript. */\n    // \"inlineSources\": true,                            /* Include source code in the sourcemaps inside the emitted JavaScript. */\n    // \"emitBOM\": true,                                  /* Emit a UTF-8 Byte Order Mark (BOM) in the beginning of output files. */\n    // \"newLine\": \"crlf\",                                /* Set the newline character for emitting files. */\n    // \"stripInternal\": true,                            /* Disable emitting declarations that have `@internal` in their JSDoc comments. */\n    // \"noEmitHelpers\": true,                            /* Disable generating custom helper functions like `__extends` in compiled output. */\n    // \"noEmitOnError\": true,                            /* Disable emitting files if any type checking errors are reported. */\n    // \"preserveConstEnums\": true,                       /* Disable erasing `const enum` declarations in generated code. */\n    // \"declarationDir\": \"./\",                           /* Specify the output directory for generated declaration files. */\n\n    /* Interop Constraints */\n    // \"isolatedModules\": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */\n    // \"allowSyntheticDefaultImports\": true,             /* Allow 'import x from y' when a module doesn't have a default export. */\n    \"esModuleInterop\": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */\n    // \"preserveSymlinks\": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */\n    \"forceConsistentCasingInFileNames\": true,            /* Ensure that casing is correct in imports. */\n\n    /* Type Checking */\n    \"strict\": true,                                      /* Enable all strict type-checking options. */\n    // \"noImplicitAny\": true,                            /* Enable error reporting for expressions and declarations with an implied `any` type.. */\n    // \"strictNullChecks\": true,                         /* When type checking, take into account `null` and `undefined`. */\n    // \"strictFunctionTypes\": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */\n    // \"strictBindCallApply\": true,                      /* Check that the arguments for `bind`, `call`, and `apply` methods match the original function. */\n    // \"strictPropertyInitialization\": true,             /* Check for class properties that are declared but not set in the constructor. */\n    // \"noImplicitThis\": true,                           /* Enable error reporting when `this` is given the type `any`. */\n    // \"useUnknownInCatchVariables\": true,               /* Type catch clause variables as 'unknown' instead of 'any'. */\n    // \"alwaysStrict\": true,                             /* Ensure 'use strict' is always emitted. */\n    // \"noUnusedLocals\": true,                           /* Enable error reporting when a local variables aren't read. */\n    // \"noUnusedParameters\": true,                       /* Raise an error when a function parameter isn't read */\n    // \"exactOptionalPropertyTypes\": true,               /* Interpret optional property types as written, rather than adding 'undefined'. */\n    // \"noImplicitReturns\": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */\n    // \"noFallthroughCasesInSwitch\": true,               /* Enable error reporting for fallthrough cases in switch statements. */\n    // \"noUncheckedIndexedAccess\": true,                 /* Include 'undefined' in index signature results */\n    // \"noImplicitOverride\": true,                       /* Ensure overriding members in derived classes are marked with an override modifier. */\n    // \"noPropertyAccessFromIndexSignature\": true,       /* Enforces using indexed accessors for keys declared using an indexed type */\n    // \"allowUnusedLabels\": true,                        /* Disable error reporting for unused labels. */\n    // \"allowUnreachableCode\": true,                     /* Disable error reporting for unreachable code. */\n\n    /* Completeness */\n    // \"skipDefaultLibCheck\": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */\n    \"skipLibCheck\": true                                 /* Skip type checking all .d.ts files. */\n  }\n}\n\n\n```\n\nNeste arquivo terá uma série de parâmetros, todos de uma forma bem didática mostrando quais opções e o que pode ser alterado.\n\nPara fins do exemplo, vamos alterar o parâmetro \"modules\": \"commonjs\" para \"modules\": \"ESNext\", aqui estamos avisando ao TypeScript para usar o padrão do EcmaScript mais atual. Também vamos deixar ativado o parâmetro \"outDir\": \"./dist\", que será o diretório onde o TypeScript irá gerar o código JavaScript, lembrando que o TypeScript, no final das contas, gera um código JavaScript.\n\nPodemos neste momento criar o primeiro código TypeScript.\n\n**Criando primeiro código TypeScript**\nVamos criar um arquivo app.ts na raiz de nosso projeto com seguinte código:\n\n```\nlet idade: number = 15;\nlet nome: string = 'Paula';\n\nconsole.log(`nome: ${nome}, idade: ${idade}`);\n\n```\n\nVeja que já declaramos algumas variáveis passando o seu tipo, não se preocupe com a sintaxe do TypeScript nesse momento, a ideia neste exemplo é verificar se nosso ambiente está ok, para isso vamos executar o seguinte comando:\n\n\n```\nnpx tsc\n\n```\nO tsc é o executável do TypeScript, que irá gerar o código JavaScript de acordo com as configurações que colocamos nos parâmetros do arquivo tsconfig.json. Como configuramos anteriormente, o TypeScript irá criar o diretório dist e gerar o arquivo app.js dentro do mesmo, com essa estrutura:\n![thumbnail_Captura_de_Tela_2021_09_13_as_17_08_37_4658a283bb.png](https://res.cloudinary.com/dskhkq8f1/image/upload/v1680192958/thumbnail_Captura_de_Tela_2021_09_13_as_17_08_37_4658a283bb_caa00d2115.png)\n\nO código gerado ficará da seguinte forma:\n\n\n```\n\"use strict\";\nvar idade = 15;\nvar nome = 'Paula';\nconsole.log(\"nome: \" + nome + \", idade: \" + idade);\n\n```\nPerceba a diferença, no código gerado não temos mais os tipos das variáveis, no console.log(), as variáveis estão concatenadas e não mais interpoladas conforme escrito no código original utilizando TypeScript.\n\nPodemos testar e executar o código JavaScript gerado, vamos usar o comando:\n\n\n```\nnode ./dist/app.js\n\n```\n\nO resultado será:\n\n\n```\nnome: Paula, idade: 15\n\n\nExecutando no Navegador\nComo o TypeScript gera um código JavaScript, nada impede de executar essa saída em um navegador. Para isso, vamos criar um arquivo na raiz do nosso projeto com o nome index.html, com uma estrutura básica importando o arquivo JavaScript, da seguinte forma:\n\n\n```\n**\nExecutando no Navegador**\nComo o TypeScript gera um código JavaScript, nada impede de executar essa saída em um navegador. Para isso, vamos criar um arquivo na raiz do nosso projeto com o nome index.html, com uma estrutura básica importando o arquivo JavaScript, da seguinte forma:\n\n\n```\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"UTF-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>Trabalhando com TypeScript</title>\n    </head>\n    <body>\n        <script src=\"dist/app.js\"></script>\n    </body>\n</html>\n\n```\n\nObs: No VS Code basta digitar “!” e selecionar a primeira opção do autocomplete que ele irá gerar a base de uma página HTML automaticamente.\n\nPerceba que importamos o arquivo JavaScript logo antes da tag de fechamento body. Nesse momento vamos entrar na nossa página index.html pelo navegador e abrir o DevTools, na aba console será exibido o seguinte resultado:\n![thumbnail_saida_typescript_31995ad15e.png](https://res.cloudinary.com/dskhkq8f1/image/upload/v1680192958/thumbnail_saida_typescript_31995ad15e_a839e01d62.png)\n\nExatamente o que fizemos em nosso arquivo TypeScript e que foi transpilado para JavaScript.\n\n**Conclusão**\n\nNeste artigo aprendemos a instalar e configurar o ambiente para iniciar o desenvolvimento de uma aplicação utilizando TypeScript. Você pode acessar a documentação para sanar qualquer dúvida.\n\nTambém entendemos a importância do arquivo tsconfig.json e como o TypeScript gera um código JavaScript, logo, nos próximos artigos, vamos ver sobre declaração de variáveis, tipagem, entre outros recursos que o TypeScript pode nos ajudar :D\n\n",
+            "tags": {
+              "data": [
+                {
+                  "attributes": {
+                    "displayName": "TypeScript",
+                    "slug": "type-script",
+                    "posts": {
+                      "data": [
+                        {
+                          "attributes": {
+                            "title": "Como instalar o TypeScript",
+                            "categories": {
+                              "data": [
+                                {
+                                  "attributes": {
+                                    "slug": "type-script"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "categories": {
+              "data": [
+                {
+                  "id": "1",
+                  "attributes": {
+                    "slug": "type-script"
+                  }
+                }
+              ]
+            },
+            "author": {
+              "__typename": "AuthorEntityResponse",
+              "data": {
+                "id": "2",
+                "attributes": {
+                  "slug": "bandelli-carlos",
+                  "displayName": "Bandelli Carlos"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "2",
+          "attributes": {
+            "title": "React: Conheça o Poder dos Hooks",
+            "slug": "react-conheca-o-poder-dos-hooks",
+            "content": "**O que são React Hooks?**\n![medium_react_hooks_28b5933233.jpg](https://res.cloudinary.com/dskhkq8f1/image/upload/v1680193362/medium_react_hooks_28b5933233_4a7123185c.jpg)\nAté a versão 16.7 era necessário criar classes para utilizar todas as funcionalidades do React em um componente, como estado e lifecycle.\n\nEra possível criar componentes a partir de funções, mas esses componentes apenas recebiam propriedades, não possuindo lifecycles, estados e outras funcionalidades do React.\n\nOs Hooks foram introduzidos na versão 16.8, e nos permitem utilizar vários recursos do React dentro de funções de forma bem simples.\n\n**Por que usar Hooks?**\n![download_3542449d3a.png](https://res.cloudinary.com/dskhkq8f1/image/upload/v1680193362/download_3542449d3a_0986c574b5.png)\nOs Hooks nos ajudam a organizar a lógica que será usada em um componente. Podemos até criar nossos próprios Hooks para reutilizar a lógica em vários componentes. A própria comunidade está criando Hooks muito interessantes que podemos utilizar em nossos projetos.\n\n**Hooks**\n\nVamos conhecer os dois principais Hooks, useState e useEffect.\n\n**useState**\n![use_State_18560bc054.webp](https://res.cloudinary.com/dskhkq8f1/image/upload/v1680193362/use_State_18560bc054_c07990f3b0.webp)\nO useState nos permite criar estados em um componente criado a partir de uma função, assim como o state presente em componentes criados a partir de classes.\n\nVeja o exemplo da seguinte classe:\n\n```\nclass Treinaweb extends React.Component{\n\tconstructor(props){\n\t\tsuper(props);\n\t\tthis.state = {\n\t\t\tnome: 'TreinaWeb'\n\t\t}\n\t}\n\t\n\trender(){\n\t\treturn {\n\t\t\t<div>\n\t\t\t\t<p>{this.state.nome}</p>\n\t\t\t\t<button onClick={() => this.setState({nome: 'React'})} >CLICK</button>\n\t\t\t</div>\n\t\t}\n\t}\n}\n\n```\nCom os Hooks nós teremos o seguinte código:\n\n\n```\nfunction Treinaweb (props){\n\tconst [nome, setNome] = useState('TreinaWeb');\n\t\n\trender(){\n\t\treturn {\n\t\t\t<div>\n\t\t\t\t<p>{nome}</p>\n\t\t\t\t<button onClick={() => setNome('React')} >CLICK</button>\n\t\t\t</div>\n\t\t}\n\t}\n}\n\n```\nBem menos código, não é mesmo? Vamos entender o que o useState() está fazendo.\n\nO useState() cria uma variável que controlará o estado do componente. Se quiser outra variável execute outro useState().\n\nPara este Hook nós passamos o valor inicial do estado, em nosso exemplo, a String “TreinaWeb”. Como retorno temos a variável com o valor do estado, que demos o nome de nome, e uma função que serve unicamente para atualizar o valor desta variável, que demos o nome de setNome.\n\nVeja que no clique do botão apenas chamamos esta função setNome(), passando o novo valor.\n\nPor estar tudo declarado dentro da própria função, não temos mais a necessidade de utilizar o this, que pode ser complicado de ser compreendido no JavaScript para iniciantes, causando erros no código.\n\nuseEffect\n![large_useeffet_82ada5289d.png](https://res.cloudinary.com/dskhkq8f1/image/upload/v1680193362/large_useeffet_82ada5289d_2c2069ce3b.png)\nO useEffect é um Hook que serve para lidar com os efeitos. Podemos usá-los como os lifeCycles componentDidMount, componentDidUpdate e componentWillUnmount.\n\nImagine que a gente tenha uma API que nos retorna uma lista de produtos baseado no nome que passarmos.\n\n\n```\nfunction Treinaweb (props){\n\tconst [produto, setProduto] = useState('Leite');\n\t\n\tuseEffect(() => {\n\t\tProdutos.buscar(produto);\n\t})\n\t\n\trender(){\n\t\treturn {\n\t\t\t<div>\n\t\t\t\t<p>{produto}</p>\n\t\t\t\t<button onClick={() => setProduto('Chocolate')} >CLICK</button>\n\t\t\t</div>\n\t\t}\n\t}\n}\n\n```\n\nO useEffect() recebe como primeiro parâmetro uma função que será executada assim que o componente renderizar. Então é um ótimo lugar para fazer requisições.\n\nDessa maneira como escrevemos, a função passada ao useEffect() será executada sempre que o componente for atualizado.\n\nA beleza deste Hook é que podemos definir facilmente quando queremos que esta função seja executada novamente. Basta passar como segundo parâmetro ao useEffect() um Array com as variáveis que controlarão esse Hook.\n\nVamos supor que queremos que a função seja executada apenas quando a variável produto for alterada. Ficaria assim:\n\n```\n\tuseEffect(() => {\n\t\tProdutos.buscar(produto);\n\t}, [produto])\n\n```\n\nE se quisermos que a função seja executada apenas uma vez, que é quando o componente é inserido na tela, basta passar um Array vazio.\n\n\n```\n\tuseEffect(() => {\n\t\tProdutos.buscar(produto);\n\t}, [])\n\n```\nVocê pode executar quantos useEffects() quiser, o que nos dá mais controle sobre o que e quando algo deve ser executado.\n**\nReutilização de Hooks**\nPodemos criar nossos próprios Hooks. Basta criar uma função que utilize outros Hooks e retorne algum valor. Assim poderemos ter uma lógica fora dos componentes e reutilizá-la onde quisermos. Essas funções também devem ter seu nome iniciado com use.\n\nO site https://usehooks.com/ possui vários exemplos de Hooks interessantes que podem ser muito úteis em seu projeto, como carregar imagens apenas se estiverem visíveis na tela, criar funcionalidade de desfazer, criar atalhos de teclado, etc. Também é uma ótima fonte para entender melhor os Hooks na prática, vendo os códigos disponíveis.\n\nOs Hooks nos permitem trabalhar de forma limpa e simples no React, nos dando um grande poder. Com ajuda da comunidade estamos vendo várias possibilidades interessantes.",
+            "tags": {
+              "data": [
+                {
+                  "attributes": {
+                    "displayName": "useEffect",
+                    "slug": "use-effect",
+                    "posts": {
+                      "data": [
+                        {
+                          "attributes": {
+                            "title": "React: Conheça o Poder dos Hooks",
+                            "categories": {
+                              "data": [
+                                {
+                                  "attributes": {
+                                    "slug": "react"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "displayName": "useState",
+                    "slug": "use-state",
+                    "posts": {
+                      "data": [
+                        {
+                          "attributes": {
+                            "title": "React: Conheça o Poder dos Hooks",
+                            "categories": {
+                              "data": [
+                                {
+                                  "attributes": {
+                                    "slug": "react"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "categories": {
+              "data": [
+                {
+                  "id": "2",
+                  "attributes": {
+                    "slug": "react"
+                  }
+                }
+              ]
+            },
+            "author": {
+              "__typename": "AuthorEntityResponse",
+              "data": {
+                "id": "1",
+                "attributes": {
+                  "slug": "carlos-bandelli",
+                  "displayName": "Carlos Bandelli"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
