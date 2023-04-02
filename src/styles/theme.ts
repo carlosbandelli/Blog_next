@@ -1,14 +1,15 @@
 export const theme = {
   colors: {
-    primaryColor: '#0A1128',
-    secondaryColor: '#dc143c',
+    primary: '#000000',
+    darkText: '#333333',
+    secondary: '#dc143c',
     white: '#FFFFFF',
     mediumGray: '#DDDDDD',
   },
   font: {
     family: {
-      default: "'Open Sans', sans-serif",
-      secondary: "'Montserrat', sans-serif",
+      default: "'Roboto', 'Open Sans'",
+      secondary: "'Open Sans', sans-serif",
     },
     sizes: {
       xsmall: '8rem',

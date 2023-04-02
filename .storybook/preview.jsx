@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../src/styles/global-styles';
 import { theme } from '../src/styles/theme';
-import '../public/assets/fonts/styles.css';
+
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -14,7 +14,7 @@ export const parameters = {
       },
       {
         name: 'dark',
-        value: theme.colors.primaryColor,
+        value: theme.colors.primary,
       },
     ],
   },
