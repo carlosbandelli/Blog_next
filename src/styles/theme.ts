@@ -9,8 +9,7 @@ export const theme = {
   },
   font: {
     family: {
-      default: "'Roboto', 'Open Sans'",
-      secondary: "'Open Sans', sans-serif",
+      default: "'Open Sans', sans-serif",
     },
     sizes: {
       xsmall: '8rem',
@@ -25,6 +24,7 @@ export const theme = {
   },
   media: {
     lteMedium: '(max-width: 768px)',
+    lteSmall: '(max-width: 360px)',
   },
   spacings: {
     xsmall: '8rem',
