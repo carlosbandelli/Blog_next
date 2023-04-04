@@ -1,24 +1,51 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { ArticleHeader, ArticleHeaderProps } from '.';
+import { ArticleMeta, ArticleMetaProps } from '.';
 
 import mock from './mock';
 
 export default {
-  title: 'ArticleHeader',
-  component: ArticleHeader,
+  title: 'ArticleMeta',
+  component: ArticleMeta,
   args: mock,
-} as Meta<ArticleHeaderProps>;
+  argTypes: {
+    createdAt: {
+      control: {
+        type: 'date',
+      },
+    },
+    author: { type: null },
+    categories: { type: null },
+  },
+} as Meta<ArticleMetaProps>;
 
-export const Template: Story<ArticleHeaderProps> = (args) => {
+export const Template: Story<ArticleMetaProps> = (args) => {
   return (
     <div>
-      <ArticleHeader {...args} />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, laborum
-        tempore repellendus neque est sequi quam inventore voluptate
-        reprehenderit, tenetur ut, molestias sunt aut doloribus dolorum
-        molestiae enim? Eligendi, molestiae!
-      </p>
+      <ArticleMeta {...args} />
+    </div>
+  );
+};
+
+export const NoAuthor: Story<ArticleMetaProps> = (args) => {
+  return (
+    <div>
+      <ArticleMeta {...args} author={undefined} />
+    </div>
+  );
+};
+
+export const NoCategories: Story<ArticleMetaProps> = (args) => {
+  return (
+    <div>
+      <ArticleMeta {...args} categories={undefined} />
+    </div>
+  );
+};
+
+export const NoAuthorAndCategories: Story<ArticleMetaProps> = (args) => {
+  return (
+    <div>
+      <ArticleMeta {...args} categories={undefined} author={undefined} />
     </div>
   );
 };

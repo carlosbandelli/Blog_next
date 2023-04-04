@@ -1,13 +1,22 @@
-import { ArticleHeaderProps } from '.';
-import { data } from '../../api/dados.json';
-
-const { title, excerpt, cover, author, categories, createdAt } = data.posts[0];
+import { ArticleMetaProps } from '.';
 
 export default {
-  title,
-  excerpt,
-  cover,
-  author,
-  categories,
-  createdAt,
-} as ArticleHeaderProps;
+  createdAt: '2021-03-02T15:16:09.246+00:00',
+  author: {
+    id: '123456789',
+    slug: 'carlos-bandelli',
+    displayName: 'Carlos Bandelli',
+  },
+  categories: [
+    {
+      id: 'asdslgyh65',
+      displayName: 'Tech',
+      slug: 'tech',
+    },
+    {
+      id: 'asdslgyh66',
+      displayName: 'JS',
+      slug: 'javascript',
+    },
+  ],
+} as ArticleMetaProps;

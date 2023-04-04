@@ -1,30 +1,27 @@
 import styled, { css } from 'styled-components';
-import { Title as HeadingStyles } from '../Heading/styles';
 
-export const Wrapper = styled.header`
+export const Wrapper = styled.div`
   ${({ theme }) => css`
-    padding-bottom: ${theme.spacings.xlarge};
-    margin-bottom: ${theme.spacings.xlarge};
-    border-bottom: 0.1rem solid ${theme.colors.mediumGray};
+    font-size: ${theme.font.sizes.small};
+    color: ${theme.colors.darkerGray};
+    font-style: italic;
 
-    ${HeadingStyles} {
-      margin: 0;
-      margin-bottom: ${theme.spacings.medium};
+    .categories span::after {
+      content: ', ';
     }
-  `}
-`;
 
-export const Excerpt = styled.p`
-  ${({ theme }) => css`
-    margin: ${theme.spacings.medium} 0;
-    font-size: ${theme.font.sizes.medium};
-  `}
-`;
+    .categories span:last-child::after {
+      content: '';
+    }
 
-export const Cover = styled.img`
-  ${({ theme }) => css`
-    max-width: 100%;
-    display: block;
-    margin-bottom: ${theme.spacings.medium};
+    a {
+      color: ${theme.colors.secondary};
+      text-decoration: none;
+      transition: all 300ms ease-in-out;
+
+      &:hover {
+        filter: brightness(50%);
+      }
+    }
   `}
 `;
